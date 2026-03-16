@@ -9,12 +9,12 @@ def plot_all_subjects(df_level):
     colors = ['blue', 'blue', 'blue', 'blue', 'red']
     level_cols = [col for col in df_level.columns if '_等级' in col]
 
-    # 自动分成 2 张图
+    # 分成两张图
     mid = len(level_cols) // 2
     part1 = level_cols[:mid]
     part2 = level_cols[mid:]
 
-    # --------- 第一张图 ---------
+    #第一张图
     rows1 = (len(part1) + 1) // 2
     fig1, axes1 = plt.subplots(rows1, 2, figsize=(16, 5 * rows1))
     axes1 = axes1.flatten()
@@ -38,7 +38,7 @@ def plot_all_subjects(df_level):
     fig1.suptitle('成绩等级分布 1', fontsize=20)
     plt.tight_layout()
 
-    # --------- 第二张图 ---------
+    #第二张图
     rows2 = (len(part2) + 1) // 2
     fig2, axes2 = plt.subplots(rows2, 2, figsize=(16, 5 * rows2))
     axes2 = axes2.flatten()

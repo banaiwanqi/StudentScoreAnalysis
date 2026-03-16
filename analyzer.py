@@ -34,7 +34,7 @@ def create_grade_level_df(df):
     英语+日语 → 合并为外语
     其他科目单独分箱
     """
-    bins = [0, 61, 71, 81, 91, 101]
+    bins = [0, 60, 70, 80, 90, 101]
     labels = ["不及格", "及格", "中等", "良好", "优秀"]
     
     df_level = pd.DataFrame()
@@ -42,13 +42,13 @@ def create_grade_level_df(df):
     
     # 外语整合
     df_level["外语"] = (df["2大学日语(A)Ⅲ"] + df["2大学英语(A)Ⅲ"])
-    df_level["外语"] = pd.cut(df_level["外语"], bins=bins, labels=labels)
+    df_level["外语_等级"] = pd.cut(df_level["外语"], bins=bins, labels=labels,right=False)
     
     # 其他科目分箱
     subjects = df.iloc[:, 4:20].columns
     for col in subjects:
         if "日语" not in col and "英语" not in col:
-            df_level[col + '_等级'] = pd.cut(df[col], bins=bins, labels=labels)
+            df_level[col + '_等级'] = pd.cut(df[col], bins=bins, labels=labels,right=False)
     
     return df_level
 
