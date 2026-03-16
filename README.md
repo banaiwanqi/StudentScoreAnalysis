@@ -30,11 +30,16 @@
   
 ## 项目结构
  StudentScoreAnalysis/
-├── main.py # 主程序入口
-├── data_loader.py # 数据加载与清洗模块
-├── analyzer.py # 成绩计算与分箱分析模块
-├── visualizer.py # 可视化绘图模块
-└── README.md # 项目说明文档
+ 
+ ├── main.py # 主程序入口
+ 
+ ├── data_loader.py # 数据加载与清洗模块
+ 
+ ├── analyzer.py # 成绩计算与分箱分析模块
+ 
+ ├── visualizer.py # 可视化绘图模块
+ 
+ └── README.md # 项目说明文档
 
 ## 学习总结
 在本次实践中，我完成了：
